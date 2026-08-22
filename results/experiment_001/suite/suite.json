@@ -1,0 +1,1696 @@
+{
+  "branches": [
+    {
+      "cold_ms": 0.828167,
+      "hit_ms": 0.068459,
+      "speedup": 12.097269898771525,
+      "variant": 1
+    },
+    {
+      "cold_ms": 0.775541,
+      "hit_ms": 0.068208,
+      "speedup": 11.37023516303073,
+      "variant": 2
+    },
+    {
+      "cold_ms": 0.801541,
+      "hit_ms": 0.067583,
+      "speedup": 11.86009795362739,
+      "variant": 4
+    },
+    {
+      "cold_ms": 0.814667,
+      "hit_ms": 0.073,
+      "speedup": 11.15982191780822,
+      "variant": 8
+    },
+    {
+      "cold_ms": 0.831959,
+      "hit_ms": 0.084333,
+      "speedup": 9.865165474962351,
+      "variant": 16
+    }
+  ],
+  "cache_levels": [
+    {
+      "cache": {
+        "by_level": {},
+        "current_bytes": 0,
+        "entries": 0,
+        "evictions": 0,
+        "freed_bytes": 0,
+        "hit_rate": 0.0,
+        "hits": 0,
+        "max_bytes": 67108864,
+        "misses": 0,
+        "peak_bytes": 0
+      },
+      "cache_efficiency_ms_per_mb": 0.0,
+      "cache_hit_rate": 0.0,
+      "config": {
+        "cache": {
+          "level": "none",
+          "max_bytes": 67108864
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/cache_levels_none"
+        },
+        "workload": {
+          "cache_hit_rate": 0.75,
+          "concurrency": 1,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 8,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.0,
+      "gpu_hours_saved_estimate": 0.0,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 0.75870519,
+      "mean_time_to_first_token_ms": 0.00047531924999999996,
+      "median_latency_ms": 0.7004585,
+      "median_time_to_first_token_ms": 0.00023344999999999996,
+      "memory_per_cache_entry": 0.0,
+      "output_tokens_per_second": 38784.65065079943,
+      "p95_latency_ms": 1.1592350999999983,
+      "p99_latency_ms": 1.9928961599999953,
+      "requests": 200,
+      "requests_per_second": 1292.8216883599807,
+      "speedup_hit_vs_miss": 1.0,
+      "stage_mean_ms": {
+        "decode_ms": 0.00088273575,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.00047531924999999996,
+        "preprocessing_ms": 0.00019022,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.75105041
+      },
+      "variant": "none",
+      "vision_compute_avoided": 0.0,
+      "vision_encoder_executions": 200,
+      "vision_encoder_executions_avoided": 0
+    },
+    {
+      "cache": {
+        "by_level": {
+          "preprocessing": {
+            "bytes": 1800,
+            "entries": 10,
+            "evictions": 0,
+            "hits": 145,
+            "misses": 55
+          }
+        },
+        "current_bytes": 1800,
+        "entries": 10,
+        "evictions": 0,
+        "freed_bytes": 0,
+        "hit_rate": 0.725,
+        "hits": 145,
+        "max_bytes": 67108864,
+        "misses": 55,
+        "peak_bytes": 1800
+      },
+      "cache_efficiency_ms_per_mb": -18.620030431008068,
+      "cache_hit_rate": 0.725,
+      "config": {
+        "cache": {
+          "level": "preprocessing",
+          "max_bytes": 67108864
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/cache_levels_preprocessing"
+        },
+        "workload": {
+          "cache_hit_rate": 0.75,
+          "concurrency": 1,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 8,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.0,
+      "gpu_hours_saved_estimate": 0.0,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 0.96226812,
+      "mean_time_to_first_token_ms": 0.0009616984999999999,
+      "median_latency_ms": 0.8123130000000001,
+      "median_time_to_first_token_ms": 0.00039374999999999995,
+      "memory_per_cache_entry": 180.0,
+      "output_tokens_per_second": 30480.286871396143,
+      "p95_latency_ms": 2.03667855,
+      "p99_latency_ms": 2.8379105899999977,
+      "requests": 200,
+      "requests_per_second": 1016.0095623798715,
+      "speedup_hit_vs_miss": 0.9670839447171012,
+      "stage_mean_ms": {
+        "decode_ms": 0.0017860115,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.0009616984999999999,
+        "preprocessing_ms": 0.00014439999999999999,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.85597165
+      },
+      "variant": "preprocessing",
+      "vision_compute_avoided": 0.0,
+      "vision_encoder_executions": 200,
+      "vision_encoder_executions_avoided": 0
+    },
+    {
+      "cache": {
+        "by_level": {
+          "visual_embedding": {
+            "bytes": 320,
+            "entries": 10,
+            "evictions": 0,
+            "hits": 145,
+            "misses": 55
+          }
+        },
+        "current_bytes": 320,
+        "entries": 10,
+        "evictions": 0,
+        "freed_bytes": 0,
+        "hit_rate": 0.725,
+        "hits": 145,
+        "max_bytes": 67108864,
+        "misses": 55,
+        "peak_bytes": 320
+      },
+      "cache_efficiency_ms_per_mb": 2378.376913229843,
+      "cache_hit_rate": 0.725,
+      "config": {
+        "cache": {
+          "level": "visual_embedding",
+          "max_bytes": 67108864
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/cache_levels_visual_embedding"
+        },
+        "workload": {
+          "cache_hit_rate": 0.75,
+          "concurrency": 1,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 8,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.0,
+      "gpu_hours_saved_estimate": 2.8153618156565655e-05,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 0.257655665,
+      "mean_time_to_first_token_ms": 0.00033287625,
+      "median_latency_ms": 0.0593545,
+      "median_time_to_first_token_ms": 0.00033529999999999996,
+      "memory_per_cache_entry": 32.0,
+      "output_tokens_per_second": 112445.62200277089,
+      "p95_latency_ms": 0.80222435,
+      "p99_latency_ms": 0.8230591699999998,
+      "requests": 200,
+      "requests_per_second": 3748.187400092363,
+      "speedup_hit_vs_miss": 13.502478620772685,
+      "stage_mean_ms": {
+        "decode_ms": 0.0006181987500000001,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.00033287625,
+        "preprocessing_ms": 6.125999999999999e-05,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.192221255
+      },
+      "variant": "visual_embedding",
+      "vision_compute_avoided": 0.725,
+      "vision_encoder_executions": 55,
+      "vision_encoder_executions_avoided": 145
+    }
+  ],
+  "concurrency": [
+    {
+      "cache": {
+        "by_level": {
+          "visual_embedding": {
+            "bytes": 320,
+            "entries": 10,
+            "evictions": 0,
+            "hits": 145,
+            "misses": 55
+          }
+        },
+        "current_bytes": 320,
+        "entries": 10,
+        "evictions": 0,
+        "freed_bytes": 0,
+        "hit_rate": 0.725,
+        "hits": 145,
+        "max_bytes": 67108864,
+        "misses": 55,
+        "peak_bytes": 320
+      },
+      "cache_efficiency_ms_per_mb": 2549.999428277367,
+      "cache_hit_rate": 0.725,
+      "config": {
+        "cache": {
+          "level": "visual_embedding",
+          "max_bytes": 67108864
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/concurrency_1"
+        },
+        "workload": {
+          "cache_hit_rate": 0.75,
+          "concurrency": 1,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 8,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.0,
+      "gpu_hours_saved_estimate": 3.032947351010101e-05,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 0.27181631,
+      "mean_time_to_first_token_ms": 0.00031871525,
+      "median_latency_ms": 0.0581665,
+      "median_time_to_first_token_ms": 0.000320775,
+      "memory_per_cache_entry": 32.0,
+      "output_tokens_per_second": 106883.44149649973,
+      "p95_latency_ms": 0.84633365,
+      "p99_latency_ms": 0.8646699999999999,
+      "requests": 200,
+      "requests_per_second": 3562.7813832166576,
+      "speedup_hit_vs_miss": 14.46087668451432,
+      "stage_mean_ms": {
+        "decode_ms": 0.00059189975,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.00031871525,
+        "preprocessing_ms": 5.3725e-05,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.207077095
+      },
+      "variant": 1,
+      "vision_compute_avoided": 0.725,
+      "vision_encoder_executions": 55,
+      "vision_encoder_executions_avoided": 145
+    },
+    {
+      "cache": {
+        "by_level": {
+          "visual_embedding": {
+            "bytes": 320,
+            "entries": 10,
+            "evictions": 0,
+            "hits": 145,
+            "misses": 55
+          }
+        },
+        "current_bytes": 320,
+        "entries": 10,
+        "evictions": 0,
+        "freed_bytes": 0,
+        "hit_rate": 0.725,
+        "hits": 145,
+        "max_bytes": 67108864,
+        "misses": 55,
+        "peak_bytes": 320
+      },
+      "cache_efficiency_ms_per_mb": 1404.049453967649,
+      "cache_hit_rate": 0.725,
+      "config": {
+        "cache": {
+          "level": "visual_embedding",
+          "max_bytes": 67108864
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/concurrency_2"
+        },
+        "workload": {
+          "cache_hit_rate": 0.75,
+          "concurrency": 2,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 8,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.0,
+      "gpu_hours_saved_estimate": 2.7804940025252527e-05,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 0.507687685,
+      "mean_time_to_first_token_ms": 0.0003745,
+      "median_latency_ms": 0.193625,
+      "median_time_to_first_token_ms": 0.00036435,
+      "memory_per_cache_entry": 32.0,
+      "output_tokens_per_second": 99873.14614189925,
+      "p95_latency_ms": 0.9528360499999997,
+      "p99_latency_ms": 1.0295191599999969,
+      "requests": 200,
+      "requests_per_second": 3329.104871396642,
+      "speedup_hit_vs_miss": 2.099079676063093,
+      "stage_mean_ms": {
+        "decode_ms": 0.0006955,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.0003745,
+        "preprocessing_ms": 6.5415e-05,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.18984062499999999
+      },
+      "variant": 2,
+      "vision_compute_avoided": 0.725,
+      "vision_encoder_executions": 55,
+      "vision_encoder_executions_avoided": 145
+    },
+    {
+      "cache": {
+        "by_level": {
+          "visual_embedding": {
+            "bytes": 320,
+            "entries": 10,
+            "evictions": 0,
+            "hits": 145,
+            "misses": 55
+          }
+        },
+        "current_bytes": 320,
+        "entries": 10,
+        "evictions": 0,
+        "freed_bytes": 0,
+        "hit_rate": 0.725,
+        "hits": 145,
+        "max_bytes": 67108864,
+        "misses": 55,
+        "peak_bytes": 320
+      },
+      "cache_efficiency_ms_per_mb": -245.6223908353608,
+      "cache_hit_rate": 0.725,
+      "config": {
+        "cache": {
+          "level": "visual_embedding",
+          "max_bytes": 67108864
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/concurrency_4"
+        },
+        "workload": {
+          "cache_hit_rate": 0.75,
+          "concurrency": 4,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 8,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.0,
+      "gpu_hours_saved_estimate": 2.848822616161616e-05,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 0.97166359,
+      "mean_time_to_first_token_ms": 0.0003615325,
+      "median_latency_ms": 0.9070419999999999,
+      "median_time_to_first_token_ms": 0.000357175,
+      "memory_per_cache_entry": 32.0,
+      "output_tokens_per_second": 101211.51533868635,
+      "p95_latency_ms": 2.057703549999999,
+      "p99_latency_ms": 3.024805829999997,
+      "requests": 200,
+      "requests_per_second": 3373.717177956212,
+      "speedup_hit_vs_miss": 0.9244585918147628,
+      "stage_mean_ms": {
+        "decode_ms": 0.0006714175000000001,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.0003615325,
+        "preprocessing_ms": 6.27e-05,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.19450582
+      },
+      "variant": 4,
+      "vision_compute_avoided": 0.725,
+      "vision_encoder_executions": 55,
+      "vision_encoder_executions_avoided": 145
+    },
+    {
+      "cache": {
+        "by_level": {
+          "visual_embedding": {
+            "bytes": 320,
+            "entries": 10,
+            "evictions": 0,
+            "hits": 146,
+            "misses": 54
+          }
+        },
+        "current_bytes": 320,
+        "entries": 10,
+        "evictions": 0,
+        "freed_bytes": 0,
+        "hit_rate": 0.73,
+        "hits": 146,
+        "max_bytes": 67108864,
+        "misses": 54,
+        "peak_bytes": 320
+      },
+      "cache_efficiency_ms_per_mb": -3634.930318196245,
+      "cache_hit_rate": 0.73,
+      "config": {
+        "cache": {
+          "level": "visual_embedding",
+          "max_bytes": 67108864
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/concurrency_8"
+        },
+        "workload": {
+          "cache_hit_rate": 0.75,
+          "concurrency": 8,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 8,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.0,
+      "gpu_hours_saved_estimate": 3.0170424598765433e-05,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 1.82498043,
+      "mean_time_to_first_token_ms": 0.00036293249999999995,
+      "median_latency_ms": 1.4995835,
+      "median_time_to_first_token_ms": 0.00036435,
+      "memory_per_cache_entry": 32.0,
+      "output_tokens_per_second": 100871.06367116648,
+      "p95_latency_ms": 4.4201101,
+      "p99_latency_ms": 6.668707669999994,
+      "requests": 200,
+      "requests_per_second": 3362.368789038883,
+      "speedup_hit_vs_miss": 0.4778544581637677,
+      "stage_mean_ms": {
+        "decode_ms": 0.0006740175,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.00036293249999999995,
+        "preprocessing_ms": 6.1645e-05,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.200860635
+      },
+      "variant": 8,
+      "vision_compute_avoided": 0.73,
+      "vision_encoder_executions": 54,
+      "vision_encoder_executions_avoided": 146
+    }
+  ],
+  "hit_rate": [
+    {
+      "cache": {
+        "by_level": {
+          "visual_embedding": {
+            "bytes": 320,
+            "entries": 10,
+            "evictions": 0,
+            "hits": 0,
+            "misses": 200
+          }
+        },
+        "current_bytes": 320,
+        "entries": 10,
+        "evictions": 0,
+        "freed_bytes": 0,
+        "hit_rate": 0.0,
+        "hits": 0,
+        "max_bytes": 67108864,
+        "misses": 200,
+        "peak_bytes": 320
+      },
+      "cache_efficiency_ms_per_mb": 0.0,
+      "cache_hit_rate": 0.0,
+      "config": {
+        "cache": {
+          "level": "visual_embedding",
+          "max_bytes": 67108864
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/hit_rate_0.0"
+        },
+        "workload": {
+          "cache_hit_rate": 0.0,
+          "concurrency": 1,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 8,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.0,
+      "gpu_hours_saved_estimate": 0.0,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 0.795977055,
+      "mean_time_to_first_token_ms": 0.00033563075,
+      "median_latency_ms": 0.8002294999999999,
+      "median_time_to_first_token_ms": 0.00033529999999999996,
+      "memory_per_cache_entry": 32.0,
+      "output_tokens_per_second": 36778.88490870349,
+      "p95_latency_ms": 0.8272499999999999,
+      "p99_latency_ms": 0.85163408,
+      "requests": 200,
+      "requests_per_second": 1225.9628302901165,
+      "speedup_hit_vs_miss": 1.0,
+      "stage_mean_ms": {
+        "decode_ms": 0.00062331425,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.00033563075,
+        "preprocessing_ms": 0.00018211,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.71047003
+      },
+      "variant": 0.0,
+      "vision_compute_avoided": 0.0,
+      "vision_encoder_executions": 200,
+      "vision_encoder_executions_avoided": 0
+    },
+    {
+      "cache": {
+        "by_level": {
+          "visual_embedding": {
+            "bytes": 320,
+            "entries": 10,
+            "evictions": 0,
+            "hits": 56,
+            "misses": 144
+          }
+        },
+        "current_bytes": 320,
+        "entries": 10,
+        "evictions": 0,
+        "freed_bytes": 0,
+        "hit_rate": 0.28,
+        "hits": 56,
+        "max_bytes": 67108864,
+        "misses": 144,
+        "peak_bytes": 320
+      },
+      "cache_efficiency_ms_per_mb": 2414.459894247619,
+      "cache_hit_rate": 0.28,
+      "config": {
+        "cache": {
+          "level": "visual_embedding",
+          "max_bytes": 67108864
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/hit_rate_0.25"
+        },
+        "workload": {
+          "cache_hit_rate": 0.25,
+          "concurrency": 1,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 8,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.0,
+      "gpu_hours_saved_estimate": 1.109765935185185e-05,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 0.59144208,
+      "mean_time_to_first_token_ms": 0.0003365075,
+      "median_latency_ms": 0.795417,
+      "median_time_to_first_token_ms": 0.00033529999999999996,
+      "memory_per_cache_entry": 32.0,
+      "output_tokens_per_second": 49394.72567778818,
+      "p95_latency_ms": 0.8147569,
+      "p99_latency_ms": 0.82558508,
+      "requests": 200,
+      "requests_per_second": 1646.4908559262724,
+      "speedup_hit_vs_miss": 13.094899765954132,
+      "stage_mean_ms": {
+        "decode_ms": 0.0006249425,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.0003365075,
+        "preprocessing_ms": 0.00013581999999999998,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.51366309
+      },
+      "variant": 0.25,
+      "vision_compute_avoided": 0.28,
+      "vision_encoder_executions": 144,
+      "vision_encoder_executions_avoided": 56
+    },
+    {
+      "cache": {
+        "by_level": {
+          "visual_embedding": {
+            "bytes": 320,
+            "entries": 10,
+            "evictions": 0,
+            "hits": 100,
+            "misses": 100
+          }
+        },
+        "current_bytes": 320,
+        "entries": 10,
+        "evictions": 0,
+        "freed_bytes": 0,
+        "hit_rate": 0.5,
+        "hits": 100,
+        "max_bytes": 67108864,
+        "misses": 100,
+        "peak_bytes": 320
+      },
+      "cache_efficiency_ms_per_mb": 2468.6619525119995,
+      "cache_hit_rate": 0.5,
+      "config": {
+        "cache": {
+          "level": "visual_embedding",
+          "max_bytes": 67108864
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/hit_rate_0.5"
+        },
+        "workload": {
+          "cache_hit_rate": 0.5,
+          "concurrency": 1,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 8,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.0,
+      "gpu_hours_saved_estimate": 2.010730444444444e-05,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 0.43674121,
+      "mean_time_to_first_token_ms": 0.00034882224999999997,
+      "median_latency_ms": 0.4099165,
+      "median_time_to_first_token_ms": 0.00033529999999999996,
+      "memory_per_cache_entry": 32.0,
+      "output_tokens_per_second": 66671.85225412803,
+      "p95_latency_ms": 0.8267101,
+      "p99_latency_ms": 1.1510679999999995,
+      "requests": 200,
+      "requests_per_second": 2222.3950751376005,
+      "speedup_hit_vs_miss": 13.545121840951593,
+      "stage_mean_ms": {
+        "decode_ms": 0.00064781275,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.00034882224999999997,
+        "preprocessing_ms": 9.9175e-05,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.36193147999999997
+      },
+      "variant": 0.5,
+      "vision_compute_avoided": 0.5,
+      "vision_encoder_executions": 100,
+      "vision_encoder_executions_avoided": 100
+    },
+    {
+      "cache": {
+        "by_level": {
+          "visual_embedding": {
+            "bytes": 320,
+            "entries": 10,
+            "evictions": 0,
+            "hits": 145,
+            "misses": 55
+          }
+        },
+        "current_bytes": 320,
+        "entries": 10,
+        "evictions": 0,
+        "freed_bytes": 0,
+        "hit_rate": 0.725,
+        "hits": 145,
+        "max_bytes": 67108864,
+        "misses": 55,
+        "peak_bytes": 320
+      },
+      "cache_efficiency_ms_per_mb": 2486.9199907952348,
+      "cache_hit_rate": 0.725,
+      "config": {
+        "cache": {
+          "level": "visual_embedding",
+          "max_bytes": 67108864
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/hit_rate_0.75"
+        },
+        "workload": {
+          "cache_hit_rate": 0.75,
+          "concurrency": 1,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 8,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.0,
+      "gpu_hours_saved_estimate": 2.948067792929293e-05,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 0.268618935,
+      "mean_time_to_first_token_ms": 0.0003351915,
+      "median_latency_ms": 0.060125,
+      "median_time_to_first_token_ms": 0.00033529999999999996,
+      "memory_per_cache_entry": 32.0,
+      "output_tokens_per_second": 107923.5374603641,
+      "p95_latency_ms": 0.8318833000000001,
+      "p99_latency_ms": 0.8546955099999999,
+      "requests": 200,
+      "requests_per_second": 3597.451248678803,
+      "speedup_hit_vs_miss": 13.668490132631536,
+      "stage_mean_ms": {
+        "decode_ms": 0.0006224985,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.0003351915,
+        "preprocessing_ms": 5.5205e-05,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.20128187
+      },
+      "variant": 0.75,
+      "vision_compute_avoided": 0.725,
+      "vision_encoder_executions": 55,
+      "vision_encoder_executions_avoided": 145
+    },
+    {
+      "cache": {
+        "by_level": {
+          "visual_embedding": {
+            "bytes": 320,
+            "entries": 10,
+            "evictions": 0,
+            "hits": 190,
+            "misses": 10
+          }
+        },
+        "current_bytes": 320,
+        "entries": 10,
+        "evictions": 0,
+        "freed_bytes": 0,
+        "hit_rate": 0.95,
+        "hits": 190,
+        "max_bytes": 67108864,
+        "misses": 10,
+        "peak_bytes": 320
+      },
+      "cache_efficiency_ms_per_mb": 2432.7256732294736,
+      "cache_hit_rate": 0.95,
+      "config": {
+        "cache": {
+          "level": "visual_embedding",
+          "max_bytes": 67108864
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/hit_rate_1.0"
+        },
+        "workload": {
+          "cache_hit_rate": 1.0,
+          "concurrency": 1,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 8,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.0,
+      "gpu_hours_saved_estimate": 3.764090527777778e-05,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 0.09610329000000001,
+      "mean_time_to_first_token_ms": 0.0003241735,
+      "median_latency_ms": 0.057792,
+      "median_time_to_first_token_ms": 0.00032094999999999997,
+      "memory_per_cache_entry": 32.0,
+      "output_tokens_per_second": 294213.19421089545,
+      "p95_latency_ms": 0.11859344999998819,
+      "p99_latency_ms": 0.8164186699999998,
+      "requests": 200,
+      "requests_per_second": 9807.106473696516,
+      "speedup_hit_vs_miss": 13.586863084179699,
+      "stage_mean_ms": {
+        "decode_ms": 0.0006020365,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.0003241735,
+        "preprocessing_ms": 1.0415e-05,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.035659805
+      },
+      "variant": 1.0,
+      "vision_compute_avoided": 0.95,
+      "vision_encoder_executions": 10,
+      "vision_encoder_executions_avoided": 190
+    }
+  ],
+  "memory_budget": [
+    {
+      "cache": {
+        "by_level": {
+          "visual_embedding": {
+            "bytes": 64,
+            "entries": 2,
+            "evictions": 23,
+            "hits": 133,
+            "misses": 67
+          }
+        },
+        "current_bytes": 64,
+        "entries": 2,
+        "evictions": 23,
+        "freed_bytes": 736,
+        "hit_rate": 0.665,
+        "hits": 133,
+        "max_bytes": 64,
+        "misses": 67,
+        "peak_bytes": 64
+      },
+      "cache_efficiency_ms_per_mb": 12047.102714570306,
+      "cache_hit_rate": 0.665,
+      "config": {
+        "cache": {
+          "level": "visual_embedding",
+          "max_bytes": 64
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/memory_budget_small"
+        },
+        "workload": {
+          "cache_hit_rate": 0.75,
+          "concurrency": 1,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 8,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.92,
+      "gpu_hours_saved_estimate": 2.6217433660862354e-05,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 0.30535669,
+      "mean_time_to_first_token_ms": 0.00033616799999999997,
+      "median_latency_ms": 0.0604995,
+      "median_time_to_first_token_ms": 0.00033529999999999996,
+      "memory_per_cache_entry": 32.0,
+      "output_tokens_per_second": 95255.48313022632,
+      "p95_latency_ms": 0.8189809499999999,
+      "p99_latency_ms": 0.8480070799999999,
+      "requests": 200,
+      "requests_per_second": 3175.182771007544,
+      "speedup_hit_vs_miss": 13.45584629843659,
+      "stage_mean_ms": {
+        "decode_ms": 0.000624312,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.00033616799999999997,
+        "preprocessing_ms": 6.6665e-05,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.237731015
+      },
+      "variant": 64,
+      "vision_compute_avoided": 0.665,
+      "vision_encoder_executions": 67,
+      "vision_encoder_executions_avoided": 133
+    },
+    {
+      "cache": {
+        "by_level": {
+          "visual_embedding": {
+            "bytes": 160,
+            "entries": 5,
+            "evictions": 20,
+            "hits": 133,
+            "misses": 67
+          }
+        },
+        "current_bytes": 160,
+        "entries": 5,
+        "evictions": 20,
+        "freed_bytes": 640,
+        "hit_rate": 0.665,
+        "hits": 133,
+        "max_bytes": 160,
+        "misses": 67,
+        "peak_bytes": 160
+      },
+      "cache_efficiency_ms_per_mb": 4760.32740097695,
+      "cache_hit_rate": 0.665,
+      "config": {
+        "cache": {
+          "level": "visual_embedding",
+          "max_bytes": 160
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/memory_budget_medium"
+        },
+        "workload": {
+          "cache_hit_rate": 0.75,
+          "concurrency": 1,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 8,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.8,
+      "gpu_hours_saved_estimate": 2.5880226828358206e-05,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 0.300933935,
+      "mean_time_to_first_token_ms": 0.00031945024999999996,
+      "median_latency_ms": 0.05875,
+      "median_time_to_first_token_ms": 0.0003206,
+      "memory_per_cache_entry": 32.0,
+      "output_tokens_per_second": 96842.92077465745,
+      "p95_latency_ms": 0.7961503,
+      "p99_latency_ms": 0.8118137499999999,
+      "requests": 200,
+      "requests_per_second": 3228.0973591552483,
+      "speedup_hit_vs_miss": 13.610440890265163,
+      "stage_mean_ms": {
+        "decode_ms": 0.00059326475,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.00031945024999999996,
+        "preprocessing_ms": 6.418e-05,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.234673335
+      },
+      "variant": 160,
+      "vision_compute_avoided": 0.665,
+      "vision_encoder_executions": 67,
+      "vision_encoder_executions_avoided": 133
+    },
+    {
+      "cache": {
+        "by_level": {
+          "visual_embedding": {
+            "bytes": 320,
+            "entries": 10,
+            "evictions": 0,
+            "hits": 145,
+            "misses": 55
+          }
+        },
+        "current_bytes": 320,
+        "entries": 10,
+        "evictions": 0,
+        "freed_bytes": 0,
+        "hit_rate": 0.725,
+        "hits": 145,
+        "max_bytes": 67108864,
+        "misses": 55,
+        "peak_bytes": 320
+      },
+      "cache_efficiency_ms_per_mb": 2558.104179111724,
+      "cache_hit_rate": 0.725,
+      "config": {
+        "cache": {
+          "level": "visual_embedding",
+          "max_bytes": 67108864
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/memory_budget_large"
+        },
+        "workload": {
+          "cache_hit_rate": 0.75,
+          "concurrency": 1,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 8,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.0,
+      "gpu_hours_saved_estimate": 3.0404077474747475e-05,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 0.271795005,
+      "mean_time_to_first_token_ms": 0.00031858224999999996,
+      "median_latency_ms": 0.05775,
+      "median_time_to_first_token_ms": 0.00032094999999999997,
+      "memory_per_cache_entry": 32.0,
+      "output_tokens_per_second": 106911.61304667906,
+      "p95_latency_ms": 0.84691045,
+      "p99_latency_ms": 0.86358809,
+      "requests": 200,
+      "requests_per_second": 3563.720434889302,
+      "speedup_hit_vs_miss": 14.669524412625428,
+      "stage_mean_ms": {
+        "decode_ms": 0.0005916527500000001,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.00031858224999999996,
+        "preprocessing_ms": 5.415e-05,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.20758646
+      },
+      "variant": 67108864,
+      "vision_compute_avoided": 0.725,
+      "vision_encoder_executions": 55,
+      "vision_encoder_executions_avoided": 145
+    }
+  ],
+  "questions_per_scene": [
+    {
+      "cache": {
+        "by_level": {
+          "visual_embedding": {
+            "bytes": 320,
+            "entries": 10,
+            "evictions": 0,
+            "hits": 143,
+            "misses": 57
+          }
+        },
+        "current_bytes": 320,
+        "entries": 10,
+        "evictions": 0,
+        "freed_bytes": 0,
+        "hit_rate": 0.715,
+        "hits": 143,
+        "max_bytes": 67108864,
+        "misses": 57,
+        "peak_bytes": 320
+      },
+      "cache_efficiency_ms_per_mb": 2502.279242774236,
+      "cache_hit_rate": 0.715,
+      "config": {
+        "cache": {
+          "level": "visual_embedding",
+          "max_bytes": 67108864
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/questions_per_scene_1"
+        },
+        "workload": {
+          "cache_hit_rate": 0.75,
+          "concurrency": 1,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 1,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.0,
+      "gpu_hours_saved_estimate": 2.9222691827485378e-05,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 0.277806485,
+      "mean_time_to_first_token_ms": 0.000326312,
+      "median_latency_ms": 0.060334,
+      "median_time_to_first_token_ms": 0.00032094999999999997,
+      "memory_per_cache_entry": 32.0,
+      "output_tokens_per_second": 104449.47629405938,
+      "p95_latency_ms": 0.8446038499999999,
+      "p99_latency_ms": 0.8644414199999998,
+      "requests": 200,
+      "requests_per_second": 3481.649209801979,
+      "speedup_hit_vs_miss": 13.691185521883838,
+      "stage_mean_ms": {
+        "decode_ms": 0.000606008,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.000326312,
+        "preprocessing_ms": 5.792e-05,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.209667705
+      },
+      "variant": 1,
+      "vision_compute_avoided": 0.7150000000000001,
+      "vision_encoder_executions": 57,
+      "vision_encoder_executions_avoided": 143
+    },
+    {
+      "cache": {
+        "by_level": {
+          "visual_embedding": {
+            "bytes": 320,
+            "entries": 10,
+            "evictions": 0,
+            "hits": 144,
+            "misses": 56
+          }
+        },
+        "current_bytes": 320,
+        "entries": 10,
+        "evictions": 0,
+        "freed_bytes": 0,
+        "hit_rate": 0.72,
+        "hits": 144,
+        "max_bytes": 67108864,
+        "misses": 56,
+        "peak_bytes": 320
+      },
+      "cache_efficiency_ms_per_mb": 2482.2969490285714,
+      "cache_hit_rate": 0.72,
+      "config": {
+        "cache": {
+          "level": "visual_embedding",
+          "max_bytes": 67108864
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/questions_per_scene_2"
+        },
+        "workload": {
+          "cache_hit_rate": 0.75,
+          "concurrency": 1,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 2,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.0,
+      "gpu_hours_saved_estimate": 2.9234403571428576e-05,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 0.27165371,
+      "mean_time_to_first_token_ms": 0.0003362135,
+      "median_latency_ms": 0.0599795,
+      "median_time_to_first_token_ms": 0.00033529999999999996,
+      "memory_per_cache_entry": 32.0,
+      "output_tokens_per_second": 106758.08386117185,
+      "p95_latency_ms": 0.82826665,
+      "p99_latency_ms": 0.8404716699999999,
+      "requests": 200,
+      "requests_per_second": 3558.6027953723947,
+      "speedup_hit_vs_miss": 13.722438234552301,
+      "stage_mean_ms": {
+        "decode_ms": 0.0006243965,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.0003362135,
+        "preprocessing_ms": 5.542e-05,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.204640825
+      },
+      "variant": 2,
+      "vision_compute_avoided": 0.72,
+      "vision_encoder_executions": 56,
+      "vision_encoder_executions_avoided": 144
+    },
+    {
+      "cache": {
+        "by_level": {
+          "visual_embedding": {
+            "bytes": 320,
+            "entries": 10,
+            "evictions": 0,
+            "hits": 146,
+            "misses": 54
+          }
+        },
+        "current_bytes": 320,
+        "entries": 10,
+        "evictions": 0,
+        "freed_bytes": 0,
+        "hit_rate": 0.73,
+        "hits": 146,
+        "max_bytes": 67108864,
+        "misses": 54,
+        "peak_bytes": 320
+      },
+      "cache_efficiency_ms_per_mb": 2433.083497776966,
+      "cache_hit_rate": 0.73,
+      "config": {
+        "cache": {
+          "level": "visual_embedding",
+          "max_bytes": 67108864
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/questions_per_scene_4"
+        },
+        "workload": {
+          "cache_hit_rate": 0.75,
+          "concurrency": 1,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 4,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.0,
+      "gpu_hours_saved_estimate": 2.9089911944444448e-05,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 0.25815856,
+      "mean_time_to_first_token_ms": 0.0003204005,
+      "median_latency_ms": 0.058917,
+      "median_time_to_first_token_ms": 0.000320775,
+      "memory_per_cache_entry": 32.0,
+      "output_tokens_per_second": 112316.60734552452,
+      "p95_latency_ms": 0.8300586499999999,
+      "p99_latency_ms": 0.8413993399999999,
+      "requests": 200,
+      "requests_per_second": 3743.886911517484,
+      "speedup_hit_vs_miss": 13.873360598583623,
+      "stage_mean_ms": {
+        "decode_ms": 0.0005950295,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.0003204005,
+        "preprocessing_ms": 5.3125e-05,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.193667085
+      },
+      "variant": 4,
+      "vision_compute_avoided": 0.73,
+      "vision_encoder_executions": 54,
+      "vision_encoder_executions_avoided": 146
+    },
+    {
+      "cache": {
+        "by_level": {
+          "visual_embedding": {
+            "bytes": 320,
+            "entries": 10,
+            "evictions": 0,
+            "hits": 145,
+            "misses": 55
+          }
+        },
+        "current_bytes": 320,
+        "entries": 10,
+        "evictions": 0,
+        "freed_bytes": 0,
+        "hit_rate": 0.725,
+        "hits": 145,
+        "max_bytes": 67108864,
+        "misses": 55,
+        "peak_bytes": 320
+      },
+      "cache_efficiency_ms_per_mb": 2959.22696192,
+      "cache_hit_rate": 0.725,
+      "config": {
+        "cache": {
+          "level": "visual_embedding",
+          "max_bytes": 67108864
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/questions_per_scene_8"
+        },
+        "workload": {
+          "cache_hit_rate": 0.75,
+          "concurrency": 1,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 8,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.0,
+      "gpu_hours_saved_estimate": 3.514901133838384e-05,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 0.33727061,
+      "mean_time_to_first_token_ms": 0.0006180352499999999,
+      "median_latency_ms": 0.0689585,
+      "median_time_to_first_token_ms": 0.00033529999999999996,
+      "memory_per_cache_entry": 32.0,
+      "output_tokens_per_second": 85395.32442640339,
+      "p95_latency_ms": 1.3835020999999998,
+      "p99_latency_ms": 1.8648262499999995,
+      "requests": 200,
+      "requests_per_second": 2846.5108142134463,
+      "speedup_hit_vs_miss": 11.155870736732252,
+      "stage_mean_ms": {
+        "decode_ms": 0.00114777975,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.0006180352499999999,
+        "preprocessing_ms": 7.834e-05,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.239982905
+      },
+      "variant": 8,
+      "vision_compute_avoided": 0.725,
+      "vision_encoder_executions": 55,
+      "vision_encoder_executions_avoided": 145
+    },
+    {
+      "cache": {
+        "by_level": {
+          "visual_embedding": {
+            "bytes": 320,
+            "entries": 10,
+            "evictions": 0,
+            "hits": 145,
+            "misses": 55
+          }
+        },
+        "current_bytes": 320,
+        "entries": 10,
+        "evictions": 0,
+        "freed_bytes": 0,
+        "hit_rate": 0.725,
+        "hits": 145,
+        "max_bytes": 67108864,
+        "misses": 55,
+        "peak_bytes": 320
+      },
+      "cache_efficiency_ms_per_mb": 2420.759214946708,
+      "cache_hit_rate": 0.725,
+      "config": {
+        "cache": {
+          "level": "visual_embedding",
+          "max_bytes": 67108864
+        },
+        "generation": {
+          "max_new_tokens": 64,
+          "seed": 42,
+          "temperature": 0.0
+        },
+        "model": {
+          "device": "cpu",
+          "dtype": "float32",
+          "id": "deterministic-test-adapter"
+        },
+        "output": {
+          "directory": "results/experiment_001/suite/questions_per_scene_16"
+        },
+        "workload": {
+          "cache_hit_rate": 0.75,
+          "concurrency": 1,
+          "dataset_path": "data/sample_scenes",
+          "questions_per_scene": 16,
+          "total_requests": 200
+        }
+      },
+      "eviction_rate": 0.0,
+      "gpu_hours_saved_estimate": 2.8666212196969695e-05,
+      "gpu_utilization": {
+        "available": false,
+        "mean_percent": null,
+        "peak_percent": null,
+        "samples": 0
+      },
+      "max_gpu_memory_allocated": 0,
+      "max_gpu_memory_reserved": 0,
+      "mean_latency_ms": 0.26386855,
+      "mean_time_to_first_token_ms": 0.00035174474999999996,
+      "median_latency_ms": 0.060438,
+      "median_time_to_first_token_ms": 0.00033529999999999996,
+      "memory_per_cache_entry": 32.0,
+      "output_tokens_per_second": 109659.05865019624,
+      "p95_latency_ms": 0.8317601,
+      "p99_latency_ms": 0.8609039299999998,
+      "requests": 200,
+      "requests_per_second": 3655.3019550065414,
+      "speedup_hit_vs_miss": 13.16855220994832,
+      "stage_mean_ms": {
+        "decode_ms": 0.00065324025,
+        "host_to_device_ms": 0.0,
+        "prefill_ms": 0.00035174474999999996,
+        "preprocessing_ms": 5.92e-05,
+        "projection_ms": 0.0,
+        "vision_encoding_ms": 0.195721035
+      },
+      "variant": 16,
+      "vision_compute_avoided": 0.725,
+      "vision_encoder_executions": 55,
+      "vision_encoder_executions_avoided": 145
+    }
+  ]
+}

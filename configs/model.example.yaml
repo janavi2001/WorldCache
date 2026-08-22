@@ -1,0 +1,8 @@
+model:
+  id: HuggingFaceTB/SmolVLM2-2.2B-Instruct
+  revision: main
+  processor_revision: main
+  dtype: float16
+  device: cuda:0
+  trust_remote_code: false
+

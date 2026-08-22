@@ -1,0 +1,82 @@
+{
+  "cache": {
+    "by_level": {
+      "visual_embedding": {
+        "bytes": 320,
+        "entries": 10,
+        "evictions": 0,
+        "hits": 143,
+        "misses": 57
+      }
+    },
+    "current_bytes": 320,
+    "entries": 10,
+    "evictions": 0,
+    "freed_bytes": 0,
+    "hit_rate": 0.715,
+    "hits": 143,
+    "max_bytes": 67108864,
+    "misses": 57,
+    "peak_bytes": 320
+  },
+  "cache_efficiency_ms_per_mb": 2502.279242774236,
+  "cache_hit_rate": 0.715,
+  "config": {
+    "cache": {
+      "level": "visual_embedding",
+      "max_bytes": 67108864
+    },
+    "generation": {
+      "max_new_tokens": 64,
+      "seed": 42,
+      "temperature": 0.0
+    },
+    "model": {
+      "device": "cpu",
+      "dtype": "float32",
+      "id": "deterministic-test-adapter"
+    },
+    "output": {
+      "directory": "results/experiment_001/suite/questions_per_scene_1"
+    },
+    "workload": {
+      "cache_hit_rate": 0.75,
+      "concurrency": 1,
+      "dataset_path": "data/sample_scenes",
+      "questions_per_scene": 1,
+      "total_requests": 200
+    }
+  },
+  "eviction_rate": 0.0,
+  "gpu_hours_saved_estimate": 2.9222691827485378e-05,
+  "gpu_utilization": {
+    "available": false,
+    "mean_percent": null,
+    "peak_percent": null,
+    "samples": 0
+  },
+  "max_gpu_memory_allocated": 0,
+  "max_gpu_memory_reserved": 0,
+  "mean_latency_ms": 0.277806485,
+  "mean_time_to_first_token_ms": 0.000326312,
+  "median_latency_ms": 0.060334,
+  "median_time_to_first_token_ms": 0.00032094999999999997,
+  "memory_per_cache_entry": 32.0,
+  "output_tokens_per_second": 104449.47629405938,
+  "p95_latency_ms": 0.8446038499999999,
+  "p99_latency_ms": 0.8644414199999998,
+  "requests": 200,
+  "requests_per_second": 3481.649209801979,
+  "speedup_hit_vs_miss": 13.691185521883838,
+  "stage_mean_ms": {
+    "decode_ms": 0.000606008,
+    "host_to_device_ms": 0.0,
+    "prefill_ms": 0.000326312,
+    "preprocessing_ms": 5.792e-05,
+    "projection_ms": 0.0,
+    "vision_encoding_ms": 0.209667705
+  },
+  "vision_compute_avoided": 0.7150000000000001,
+  "vision_encoder_executions": 57,
+  "vision_encoder_executions_avoided": 143
+}

@@ -1,0 +1,17 @@
+{
+  "license": "Apache-2.0; self-created colored-block diagrams",
+  "legend": {"red": "container", "blue": "object", "green": "gripper", "dark": "obstacle"},
+  "scenes": [
+    {"image": "scene_01.ppm", "questions": ["What objects are visible?", "Where is the red container?", "Is the green gripper holding anything?", "Is the path to the blue object blocked?", "What may happen if the gripper moves upward?", "Which direction has fewer obstacles?", "Is the red container above the blue object?", "Describe one potential collision."]},
+    {"image": "scene_02.ppm", "questions": ["What colors are visible?", "Is the red container left of the blue object?", "Where is the obstacle?", "Can the gripper move right unobstructed?", "What may happen if it moves left?", "Which object is nearest the obstacle?", "Is the path blocked?", "Suggest a safer movement."]},
+    {"image": "scene_03.ppm", "questions": ["What objects are visible?", "Where is the green gripper?", "Are the red blocks aligned?", "Is an obstacle above the container?", "What could collide if the gripper moves up?", "Which path looks open?", "Is blue right of green?", "Summarize the spatial arrangement."]},
+    {"image": "scene_04.ppm", "questions": ["Locate the blue object.", "Where is the red container?", "Is the obstacle between green and red?", "Could moving right cause a collision?", "Which movement is safer?", "What is below the blue object?", "Is green left of the obstacle?", "List the occupied regions."]},
+    {"image": "scene_05.ppm", "questions": ["What objects are visible?", "Is green above red?", "Where is the blue object?", "Does the obstacle block the left side?", "What happens if the gripper moves down?", "Which target is closest?", "Is the center clear?", "Describe a safe route."]},
+    {"image": "scene_06.ppm", "questions": ["Where is the red container?", "Where is the green gripper?", "Is the obstacle centered?", "Can the gripper move toward red directly?", "What collision is possible?", "Which side is more open?", "Is blue right of the obstacle?", "Describe the scene."]},
+    {"image": "scene_07.ppm", "questions": ["What objects are visible?", "Is green above blue?", "Where are the obstacles?", "Is the lower path blocked?", "What may happen after a downward move?", "Which movement avoids obstacles?", "Are the blue blocks adjacent?", "Describe a possible action."]},
+    {"image": "scene_08.ppm", "questions": ["Locate the red container.", "Locate the blue object.", "Where is the gripper?", "Does the obstacle block the center?", "Could a left move collide?", "Which target is nearer green?", "Is red above green?", "Summarize safe motion."]},
+    {"image": "scene_09.ppm", "questions": ["What colors are visible?", "Is the red area left of green?", "Where is the obstacle?", "Is blue above the obstacle?", "What may happen if green moves left?", "Is the upper row clear?", "Which route avoids dark cells?", "Describe the layout."]},
+    {"image": "scene_10.ppm", "questions": ["Where is the obstacle?", "Where is the gripper?", "Are blue and red adjacent?", "Is a downward path clear?", "What could happen on an upward move?", "Which movement is least likely to collide?", "Is green below the obstacle?", "List visible objects."]}
+  ]
+}
+

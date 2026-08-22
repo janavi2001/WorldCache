@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "worldcache"
+version = "0.1.0"
+description = "Visual-prefix reuse for repeated physical-scene reasoning"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.30",
+  "pydantic>=2.8",
+  "python-multipart>=0.0.9",
+  "PyYAML>=6.0",
+  "prometheus-client>=0.20",
+  "Pillow>=10.3",
+]
+
+[project.optional-dependencies]
+model = ["torch>=2.3", "transformers>=4.49", "accelerate>=0.33", "safetensors>=0.4", "nvidia-ml-py>=12.560"]
+bench = ["matplotlib>=3.8", "numpy>=1.26", "pandas>=2.2"]
+dev = ["pytest>=8.2", "httpx>=0.27", "ruff>=0.5", "mypy>=1.10"]
+all = ["worldcache[model,bench,dev]"]
+
+[project.scripts]
+worldcache = "worldcache.api.app:main"
+worldcache-benchmark = "worldcache.benchmark.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/worldcache"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = [".deps", "results"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/worldcache/api/app.py" = ["B008"]

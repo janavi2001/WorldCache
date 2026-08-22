@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420">
+<rect width="100%" height="100%" fill="white"/><text x="360.0" y="28" text-anchor="middle" font-family="sans-serif" font-size="18">Cache memory versus hit rate</text>
+<line x1="60" y1="360" x2="660" y2="360" stroke="black"/><line x1="60" y1="60" x2="60" y2="360" stroke="black"/>
+<polyline points="60.0,360.0 210.0,360.0 360.0,360.0 510.0,360.0 660.0,360.0" fill="none" stroke="#2563eb" stroke-width="3"/>
+<text x="360.0" y="408" text-anchor="middle" font-family="sans-serif">Target hit rate</text><text x="18" y="210.0" transform="rotate(-90 18 210.0)" text-anchor="middle" font-family="sans-serif">Peak cached bytes</text>
+</svg>

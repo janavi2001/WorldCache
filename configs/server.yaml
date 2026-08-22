@@ -1,0 +1,14 @@
+model:
+  id: HuggingFaceTB/SmolVLM2-2.2B-Instruct
+  revision: main
+  processor_revision: main
+  dtype: float16
+  device: cuda:0
+cache:
+  default_level: visual_embedding
+  max_bytes: 4294967296
+  ttl_seconds: null
+server:
+  host: 0.0.0.0
+  port: 8000
+

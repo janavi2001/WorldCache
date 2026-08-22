@@ -1,0 +1,82 @@
+{
+  "cache": {
+    "by_level": {
+      "visual_embedding": {
+        "bytes": 160,
+        "entries": 5,
+        "evictions": 20,
+        "hits": 133,
+        "misses": 67
+      }
+    },
+    "current_bytes": 160,
+    "entries": 5,
+    "evictions": 20,
+    "freed_bytes": 640,
+    "hit_rate": 0.665,
+    "hits": 133,
+    "max_bytes": 160,
+    "misses": 67,
+    "peak_bytes": 160
+  },
+  "cache_efficiency_ms_per_mb": 4760.32740097695,
+  "cache_hit_rate": 0.665,
+  "config": {
+    "cache": {
+      "level": "visual_embedding",
+      "max_bytes": 160
+    },
+    "generation": {
+      "max_new_tokens": 64,
+      "seed": 42,
+      "temperature": 0.0
+    },
+    "model": {
+      "device": "cpu",
+      "dtype": "float32",
+      "id": "deterministic-test-adapter"
+    },
+    "output": {
+      "directory": "results/experiment_001/suite/memory_budget_medium"
+    },
+    "workload": {
+      "cache_hit_rate": 0.75,
+      "concurrency": 1,
+      "dataset_path": "data/sample_scenes",
+      "questions_per_scene": 8,
+      "total_requests": 200
+    }
+  },
+  "eviction_rate": 0.8,
+  "gpu_hours_saved_estimate": 2.5880226828358206e-05,
+  "gpu_utilization": {
+    "available": false,
+    "mean_percent": null,
+    "peak_percent": null,
+    "samples": 0
+  },
+  "max_gpu_memory_allocated": 0,
+  "max_gpu_memory_reserved": 0,
+  "mean_latency_ms": 0.300933935,
+  "mean_time_to_first_token_ms": 0.00031945024999999996,
+  "median_latency_ms": 0.05875,
+  "median_time_to_first_token_ms": 0.0003206,
+  "memory_per_cache_entry": 32.0,
+  "output_tokens_per_second": 96842.92077465745,
+  "p95_latency_ms": 0.7961503,
+  "p99_latency_ms": 0.8118137499999999,
+  "requests": 200,
+  "requests_per_second": 3228.0973591552483,
+  "speedup_hit_vs_miss": 13.610440890265163,
+  "stage_mean_ms": {
+    "decode_ms": 0.00059326475,
+    "host_to_device_ms": 0.0,
+    "prefill_ms": 0.00031945024999999996,
+    "preprocessing_ms": 6.418e-05,
+    "projection_ms": 0.0,
+    "vision_encoding_ms": 0.234673335
+  },
+  "vision_compute_avoided": 0.665,
+  "vision_encoder_executions": 67,
+  "vision_encoder_executions_avoided": 133
+}

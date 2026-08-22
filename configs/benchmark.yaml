@@ -1,0 +1,20 @@
+model:
+  id: deterministic-test-adapter
+  dtype: float32
+  device: cpu
+workload:
+  dataset_path: data/sample_scenes
+  questions_per_scene: 8
+  total_requests: 200
+  concurrency: 1
+  cache_hit_rate: 0.75
+cache:
+  level: visual_embedding
+  max_bytes: 67108864
+generation:
+  max_new_tokens: 64
+  temperature: 0.0
+  seed: 42
+output:
+  directory: results/experiment_001
+
