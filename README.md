@@ -1,27 +1,45 @@
 # WorldCache
 
-> WorldCache is an inference and benchmarking system for reusing visual representations across repeated physical-scene reasoning requests. It caches preprocessing results, vision embeddings, and optionally multimodal prefix state so that vision-language models can answer multiple questions about the same image or video without repeating unchanged computation. The project evaluates latency, throughput, GPU memory, cache efficiency, and deterministic equivalence between cached and uncached execution.
+WorldCache is an inference-serving and benchmarking system for repeated visual question answering.
+It avoids recomputing image processing and vision features when multiple questions refer to the same
+physical scene.
 
-WorldCache provides an instrumented FastAPI server, a byte-bounded thread-safe LRU, a model-adapter
-boundary, deterministic correctness checks, a repeated-scene benchmark suite, Prometheus metrics,
-and Nsight ranges. The production adapter targets
-`HuggingFaceTB/SmolVLM2-2.2B-Instruct`; the small dependency-free adapter is for CI and benchmark
-harness validation only.
+The project demonstrates a complete path from cache-key design and bounded storage to model
+integration, REST serving, correctness checks, profiling, and reproducible benchmarks.
 
-## What is implemented
+## Highlights
 
-- Level 0: complete uncached inference.
-- Level 1: cached processor tensors; image decoding and normalization are skipped on a hit.
-- Level 2: cached image hidden states; preprocessing, pixel transfer, and the model's image-feature
-  calculation are skipped on a hit.
-- Exact deterministic SHA-256 keys include all output-affecting model and processor configuration.
-- One-GPU REST serving, multiple questions per registered image, and branch evaluation with a single
-  shared visual lookup.
-- Request-level stage metrics, cache metrics, JSONL/JSON reports, experiment sweeps, SVG graphs, and
-  NVTX ranges.
+- FastAPI service for scene registration, querying, branching, health, cache statistics, and metrics.
+- Thread-safe, byte-bounded LRU cache with TTL support, metadata, eviction accounting, and per-level
+  statistics.
+- Deterministic SHA-256 cache keys incorporating scene content and output-affecting model,
+  processor, precision, and visual-tokenization configuration.
+- Adapter boundary separating serving and caching logic from model-specific execution.
+- Production adapter for `HuggingFaceTB/SmolVLM2-2.2B-Instruct`.
+- Dependency-light deterministic adapter for CI, correctness checks, and benchmark-harness testing.
+- Request-level latency, throughput, cache, GPU-memory, and vision-execution metrics.
+- NVTX ranges and benchmark sweeps for cache level, hit rate, memory budget, concurrency, and
+  branching.
+
+The working cache levels are:
+
+- `none`: complete uncached inference.
+- `preprocessing`: reuse processor outputs and skip repeated image preprocessing.
+- `visual_embedding`: reuse post-vision-encoder image states and skip the complete visual pipeline.
 
 Prefix-KV reuse, video, multi-GPU serving, and future-world generation are explicit non-MVP items and
 are not claimed as implemented.
+
+## Architecture
+
+`WorldCacheEngine` owns an in-memory scene registry and a byte-bounded representation cache. Cache
+keys include normalized scene bytes plus model, processor, precision, and visual-tokenization
+configuration, so incompatible revisions cannot reuse old representations.
+
+The `VLMAdapter` interface isolates model-specific work into preprocessing, visual encoding, and
+generation. The SmolVLM adapter uses a sentinel-based prompt split so the processor-generated image
+token structure can be preserved while questions change. A cache hit can therefore go directly to
+language generation with the image hidden states already resident on the device.
 
 ## Setup
 
@@ -101,6 +119,32 @@ The suite covers cache level, target hit rate (0/25/50/75/100%), questions per s
 block to the SmolVLM ID and `cuda:0` before collecting reportable VLM numbers. Keep deterministic
 generation (`temperature: 0.0`) for equivalence checks.
 
+## Included benchmark results
+
+The checked-in results are from the dependency-free deterministic adapter on CPU. They validate the
+cache and benchmark machinery, but they are not representative of SmolVLM or GPU performance.
+The main run used 200 requests, 8 questions per scene, a 75% target hit rate, and the
+`visual_embedding` cache level. The observed hit rate was 72.5%:
+
+| Metric | Result |
+| --- | ---: |
+| Median latency | 0.066 ms |
+| P95 latency | 0.866 ms |
+| Throughput | 3,489 requests/s |
+| Hit vs. miss speedup | 13.23× |
+| Vision compute avoided | 72.5% |
+| Vision encoder executions avoided | 145 / 200 |
+| Peak cached representation memory | 320 bytes |
+
+In the cache-level sweep, median latency was 0.700 ms with no cache, 0.812 ms with preprocessing
+caching, and 0.059 ms with visual-embedding caching. The complete raw requests, aggregate metrics,
+and generated plots are available under [`results/experiment_001`](results/experiment_001), including
+the [aggregate summary](results/experiment_001/aggregate.json) and [suite results](results/experiment_001/suite/suite.json).
+
+For reportable VLM results, replace the deterministic model in `configs/benchmark.yaml` with the
+SmolVLM model, run the suite on a controlled CUDA device, and report the resulting raw and aggregate
+files alongside the hardware and model configuration.
+
 Profile the configured benchmark with:
 
 ```bash
@@ -123,14 +167,31 @@ Tests require cached and uncached token IDs to match, verify representation equi
 invalidation, and assert that a warmed Level-2 hit makes zero additional vision-encoder calls.
 Normal CI does not enforce a strict latency ratio because shared hosts are noisy.
 
-## Reporting results
+## Current limitations
 
-Do not substitute the included deterministic smoke benchmark for GPU/VLM evidence. After completing
-the CUDA suite, report the measured result in this form only:
+- The scene registry and representation cache are in-process and non-durable.
+- Inference is serialized for the single-device adapter; true stream isolation and multi-GPU
+  execution are not implemented.
+- The current visual cache stores post-vision-encoder states, not language-model prefix KV state.
+- The SmolVLM adapter reports vision and connector work together because that is the boundary exposed
+  by the selected model API.
+- The system provides qualitative VLM scene reasoning, not physically accurate future prediction.
 
-> Across repeated physical-scene reasoning workloads, WorldCache reduced median time to first token by X%, increased throughput by Y×, and avoided Z% of repeated vision-encoder executions at a cache-hit rate of H%. Cached execution produced the same deterministic token outputs as uncached execution. Performance gains depended on the number of questions per scene, cache-memory budget, and representation being cached.
+See [docs/architecture.md](docs/architecture.md), [docs/methodology.md](docs/methodology.md), and
+[docs/limitations.md](docs/limitations.md) for implementation and evaluation details.
 
-Fill in X/Y/Z/H from the generated raw and aggregate GPU results. See
-[architecture](docs/architecture.md), [methodology](docs/methodology.md), and
-[limitations](docs/limitations.md) before interpreting results.
+## Project layout
+
+```text
+src/worldcache/
+  api/          FastAPI application and request schemas
+  cache/        cache levels, keys, metadata, and byte-bounded LRU
+  models/       adapter interface, deterministic adapter, and SmolVLM adapter
+  serving/      request orchestration, branching, and instrumentation
+  benchmark/    workloads, runner, correctness, reports, and experiment suites
+tests/          unit and integration coverage
+data/           sample scenes and question manifest
+configs/        server and benchmark configuration
+docs/           architecture, methodology, and limitations
+```
 
